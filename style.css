@@ -1,3 +1,49 @@
 body {
-    background-color: navy;
+    background-color: lightblue;
+    color: navy;
+}
+
+.rocket-container {
+    width: 700px;
+    height: 100px;
+    margin: 100px 400px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ship1 {
+    height: 20px;
+    width: 40px;
+    background-color: green;
+    margin: 5px;
+}
+
+#ship2 {
+    height: 20px;
+    width: 60px;
+    background-color: blue;
+    margin: 5px;
+}
+
+#ship3 {
+    height: 20px;
+    width: 60px;
+    background-color: purple;
+    margin: 5px;
+}
+
+#ship4 {
+    height: 20px;
+    width: 80px;
+    background-color: yellow;
+    margin: 5px;
+}
+
+#ship5 {
+    height: 20px;
+    width: 100px;
+    background-color: black;
+    margin: 5px;
 }

@@ -2,11 +2,29 @@ body {
     background-color: lightblue;
     color: navy;
 }
+#grids-container {
+    display: flex;
+    justify-content: center;
+}
+.plotbox {
+    height: 40px;
+    width: 40px;
+    border: dotted 1px black;
+    box-sizing: border-box;
+}
+.board {
+    width: 400px;
+    height: 400px;
+    margin: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid black;
+}
 
 .rocket-container {
     width: 700px;
     height: 100px;
-    margin: 100px 400px;
+    margin: 50px 400px;
     background-color: aqua;
     display: flex;
     align-items: center;

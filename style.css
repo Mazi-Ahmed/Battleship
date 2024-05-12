@@ -3,65 +3,69 @@ body {
     color: navy;
 }
 #grids-container {
+    width: 900px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
+.board {
+    /* width: 400px;
+    height: 400px; */
+    /* margin: 0 50px; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    /* border: solid black; */
+}
+
 .plotbox {
     height: 40px;
     width: 40px;
     border: dotted 1px black;
     box-sizing: border-box;
 }
-.board {
-    width: 400px;
-    height: 400px;
-    margin: 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    border: solid black;
-}
 
 .rocket-container {
-    width: 700px;
+    width: 500px;
     height: 100px;
-    margin: 50px 400px;
+    margin: 20px 500px;
     background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#ship1 {
-    height: 20px;
-    width: 40px;
-    background-color: green;
-    margin: 5px;
-}
-
-#ship2 {
-    height: 20px;
-    width: 60px;
-    background-color: blue;
-    margin: 5px;
-}
-
-#ship3 {
-    height: 20px;
-    width: 60px;
-    background-color: purple;
-    margin: 5px;
-}
-
-#ship4 {
-    height: 20px;
+.destroyer {
+    height: 40px;
     width: 80px;
-    background-color: yellow;
-    margin: 5px;
+    background-color: green;
+    margin: 3px;
 }
 
-#ship5 {
-    height: 20px;
-    width: 100px;
+.submarine {
+    height: 40px;
+    width: 120px;
+    background-color: blue;
+    margin: 3px;
+}
+
+.cruiser {
+    height: 40px;
+    width: 120px;
+    background-color: purple;
+    margin: 3px;
+}
+
+.battleship {
+    height: 40px;
+    width: 160px;
+    background-color: yellow;
+    margin: 3px;
+}
+
+.carrier {
+    height: 40px;
+    width: 200px;
     background-color: black;
-    margin: 5px;
+    margin: 3px;
 }

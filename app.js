@@ -179,8 +179,8 @@ startButton.addEventListener('click', startGame)
 
 let playerHits = []
 let computerHits = []
-const playerSunkShips = []
-const computerSunkShips = []
+const playerDestroyShips = []
+const computerDestroyShips = []
 
 function handleClick(e) {
     if(!gameOver) {
@@ -192,7 +192,7 @@ function handleClick(e) {
             classes = classes.filter(className => className !== 'hit')
             classes = classes.filter(className => className !== 'taken')
             playerHits.push(...classes)
-            checkScore('player', playerHits, playerSunkShips)
+            checkScore('player', playerHits, playerDestroyShips)
         }
         if (!e.target.classList.contains('taken')) {
             reportInfo.textContent = 'Nothing hit'
@@ -201,39 +201,39 @@ function handleClick(e) {
         playerTurn = false
         const allBoardBlocks = document.querySelectorAll('#computer div')
         allBoardBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))
-        setTimeout(computerGo, 3000)
+        setTimeout(computerTurn, 3000)
     }
 }
 
 
-function computerGo() {
+function computerTurn() {
     if (!gameOver)  {
         moveInfo.textContent = 'Enemy Move'
         reportInfo.textContent = 'The enemy is plotting...'
         
         setTimeout(() => {
-            let randomGo = Math.floor(Math.random() * width * width)
+            let randomMove = Math.floor(Math.random() * width * width)
             const allBoardBlocks = document.querySelectorAll('#player div')
 
-            if (allBoardBlocks[randomGo].classList.contains('taken') &&
-            allBoardBlocks[randomGo].classList.contains('hit')
-            ){ computerGo()
+            if (allBoardBlocks[randomMove].classList.contains('taken') &&
+            allBoardBlocks[randomMove].classList.contains('hit')
+            ){ computerTurn()
             return
         }   else if (
-            allBoardBlocks[randomGo].classList.contains('taken') &&
-            !allBoardBlocks[randomGo].classList.contains('hit')
+            allBoardBlocks[randomMove].classList.contains('taken') &&
+            !allBoardBlocks[randomMove].classList.contains('hit')
         ){
-            allBoardBlocks[randomGo].classList.contains('hit')
+            allBoardBlocks[randomMove].classList.contains('hit')
             reportInfo.textContent = 'The enemy hit your ship!'
-            let classes = Array.from(allBoardBlocks[randomGo].classList)
+            let classes = Array.from(allBoardBlocks[randomMove].classList)
             classes = classes.filter(className => className  !== 'block')
             classes = classes.filter(className => className !== 'hit')
             classes = classes.filter(className => className !== 'taken')
             computerHits.push(...classes)
-            checkScore('computer', computerHits, computerSunkShips)
+            checkScore('computer', computerHits, computerDestroyShips)
         } else {
             reportInfo.textContent = 'Nothing hit'
-            allBoardBlocks[randomGo].classList.add('empty')
+            allBoardBlocks[randomMove].classList.add('empty')
         }
         }, 1000)
         
@@ -270,11 +270,11 @@ function checkScore(user, userHits, userSunkShips) {
     checkShip('battleship', 4)
     checkShip('carrier', 5)
 
-    if(playerSunkShips.length === 5) {
+    if(playerDestroyShips.length === 5) {
         reportInfo.textContent = 'You destroyed all the enemy ships. You Won!'
         gameOver = true
     }
-    if(computerSunkShips.length === 5) {
+    if(computerDestroyShips.length === 5) {
         reportInfo.textContent = 'The enemy destroyed all your ships. You Lost!'
         gameOver = true
     }

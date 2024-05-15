@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Battleship</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Battleship</h1>
-    <button id="play-button">PLAY</button>
-    <div class="display">
-        <p>Message: <span id="message"></span></p>
-    </div>
-    
-    <div id="grids-container">
-    </div>
+<body class="splash">
+<div class="splash-container">
+    <h1 class="game-title">BATTLESHIP</h1> 
 
-    <div class="rocket-container">
-        <div class="destroyer" draggable="true"></div>
-        <div class="submarine" draggable="true"></div>
-        <div class="cruiser" draggable="true"></div>
-        <div class="battleship" draggable="true"></div>
-        <div class="carrier" draggable="true"></div>
+    <div>
+    <a href="game.html" class="game-button">PLAY</a>
     </div>
-    <button id="rotate-button">ROTATE</button>
+</div>
+
+<div class="rocket-animation">
+    <div class="orbit">
+    <div class="rocket">
+        </div>
+    </div>
+</div>
+
+<div class="sky"></div>
+
+<script>
+function createStar() {
+    const star = document.createElement("div")
+    star.className = "star"
+    star.style.left = Math.random() * window.innerWidth + "px"
+    star.style.top = Math.random() * window.innerHeight + "px"
+    document.body.appendChild(star)
     
-    <div class="fleet-metrics">
-        <p>Your Fleet: <span id="playerFleet"></span></p> 
-        <p>Enemy Fleet: <span id="enemyFleet"></span></p> 
-    </div>
-    <script src="app.js"></script> 
+setTimeout(() => {
+    star.remove();
+  }, 5000);
+}
+
+function animateStars() {
+  setInterval(() => {
+    createStar();
+  }, 200);
+}
+
+animateStars();
+</script>
 </body>
 </html>

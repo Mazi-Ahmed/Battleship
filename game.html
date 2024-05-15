@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<h1>BATTLESHIP</h1> 
+<div id="grids-container"></div>
+
+<div id="gameInfo">
+    <p>MOVE: <span id="move-info"></span></p>
+    <p>REPORT: <span id="report-info"></span></p>
+</div>
+
+<div id="buttons-container">
+<button id="rotate-button">ROTATE</button>
+<button id="start-button">START</button>
+</div>
+
+<div class = "ships-container">
+    <div id="0" class="destroyer-dimension destroyer" draggable="true"></div>
+    <div id="1" class="submarine-dimension submarine" draggable="true"></div>
+    <div id="2" class="cruiser-dimension cruiser" draggable="true"></div>
+    <div id="3" class="battleship-dimension battleship" draggable="true"></div>
+    <div id="4" class="carrier-dimension carrier" draggable="true"></div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>

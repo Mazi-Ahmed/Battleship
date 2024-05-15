@@ -23,3 +23,7 @@ The Landing Screen
 
 ![Screenshot 2024-05-15 at 5 38 20 PM](https://github.com/Mazi-Ahmed/Battleship/assets/167652626/2b8944ab-3b20-4f8f-82de-ec7ebff79c5a)
 The Game Screen
+
+# Deployment Page
+
+https://mazi-ahmed.github.io/Battleship/
